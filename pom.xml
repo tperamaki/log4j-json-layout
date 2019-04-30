@@ -13,14 +13,14 @@
     <description>JSON layout for Log4j</description>
 
     <distributionManagement>
-      <snapshotRepository>
-        <id>ossrh</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      </snapshotRepository>
-      <repository>
-        <id>ossrh</id>
-        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-      </repository>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
     </distributionManagement>
 
     <licenses>
@@ -74,6 +74,40 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-        </plugins>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>deploy</phase>
+                        <goals><goal>jar-no-fork</goal></goals> 
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin> 
+                <artifactId>maven-javadoc-plugin</artifactId> 
+                <configuration> 
+                    <source>8</source> 
+                </configuration> 
+                <executions> 
+                    <execution> 
+                        <id>attach-javadocs</id>
+                        <phase>deploy</phase>
+                        <goals><goal>jar</goal></goals> 
+                    </execution> 
+                </executions> 
+            </plugin>
+            <plugin> 
+                <!-- explicitly define maven-deploy-plugin after other to force exec order -->
+                <artifactId>maven-deploy-plugin</artifactId> 
+                <executions> 
+                    <execution> 
+                        <id>deploy</id>
+                        <phase>deploy</phase>
+                        <goals><goal>deploy</goal></goals> 
+                    </execution> 
+                </executions> 
+            </plugin>
+        </plugins> 
     </build>
 </project>
