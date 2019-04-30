@@ -1,8 +1,5 @@
-package de.thmshmm.log4j;
+package com.tperamaki.log4j;
 
-/**
- * Created by Thomas Hamm on 27.07.17.
- */
 public class LogItem {
     private final String timestamp;
     private final String level;

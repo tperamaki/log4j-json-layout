@@ -1,4 +1,4 @@
-package de.thmshmm.log4j;
+package com.tperamaki.log4j;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -9,10 +9,6 @@ import org.apache.log4j.spi.LoggingEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
-/**
- * Created by Thomas Hamm on 27.07.17.
- */
 public class JsonLayout extends Layout {
     private final ObjectMapper om;
     private SimpleDateFormat dateFormat;
