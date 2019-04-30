@@ -12,9 +12,7 @@ The "stacktrace" item is optional and will only be in the JSON object if the log
 ## Example log4j.properties
 ```
 log4j.appender.stdout=org.apache.log4j.ConsoleAppender
-log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
 log4j.appender.stdout.layout=com.tperamaki.log4j.JsonLayout
-log4j.appender.stdout.layout.ConversionPattern=[%d] %p %m (%c)%n
 log4j.appender.stdout.layout.DatePattern=yyyy-MM-dd'T'HH:mm'Z'
 ```
 
