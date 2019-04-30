@@ -4,10 +4,47 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.thmshmm.log4j</groupId>
+    <groupId>com.tperamaki</groupId>
     <artifactId>log4j-json-layout</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
+    <name>Log4j JSON layout</name>
+    <url>https://github.com/tperamaki/log4j-json-layout</url>
+    <description>JSON layout for Log4j</description>
+
+    <distributionManagement>
+      <snapshotRepository>
+        <id>ossrh</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      </snapshotRepository>
+      <repository>
+        <id>ossrh</id>
+        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      </repository>
+    </distributionManagement>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/tperamaki/log4j-json-layout</url>
+        <connection>scm:git:git://github.com/tperamaki/log4j-json-layout.git</connection>
+        <developerConnection>scm:git:git@github.com:tperamaki/log4j-json-layout.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <email>teemu.o.peramaki@gmail.com</email>
+            <name>Teemu Perämäki</name>
+            <url>https://github.com/tperamaki</url>
+            <id>tperamaki</id>
+        </developer>
+    </developers>
 
     <properties>
         <log4j.version>1.2.17</log4j.version>
